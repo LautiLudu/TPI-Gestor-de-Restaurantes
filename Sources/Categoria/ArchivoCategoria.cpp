@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
+#include <cstdio>
 #include "ArchivoCategoria.h"
 #include "Utilidades.h"
-
 using namespace std;
 
 ArchivoCategoria::ArchivoCategoria(std::string nombre){
@@ -55,7 +55,7 @@ int ArchivoCategoria::contarRegistros(){
     return bytes / sizeof(Categoria);
 }
 
-int ArchivoCategoria::buscarRegistro(int id){
+int ArchivoCategoria::buscarRegistroId(int id){
     int cantidad = contarRegistros();
 
     for(int i = 0; i < cantidad; i++){
