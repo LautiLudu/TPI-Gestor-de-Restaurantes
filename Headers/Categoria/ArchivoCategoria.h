@@ -12,7 +12,7 @@ public:
     bool grabarRegistro(Categoria reg);
     bool modificarRegistro(Categoria reg, int pos);
     int contarRegistros();
-    int buscarRegistro(int id);
+    int buscarRegistroId(int id);
     int generarId();
     int bajaCategoria();
 
@@ -21,4 +21,3 @@ private:
 };
 
 #endif // ARCHIVOCATEGORIA_H_INCLUDED
-

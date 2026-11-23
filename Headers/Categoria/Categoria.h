@@ -21,6 +21,6 @@ public:
 private:
     int _IdCategoria;
     char _Nombre[20];
-    char _Descripcion[50];
+    char _Descripcion[10];
     bool _Estado;
 };
