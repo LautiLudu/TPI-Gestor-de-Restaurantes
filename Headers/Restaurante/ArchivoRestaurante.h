@@ -12,13 +12,12 @@ public:
     bool grabarRegistro(Restaurante reg);
     bool modificarRegistro(Restaurante reg, int pos);
     int contarRegistros();
-    int buscarRegistro(int id);
+    int buscarRegistroId(int id);
+    ///int buscarRegistroNombre(std::string nombre);
     int generarId();
-    int bajaRestaurante();
 
 private:
     std::string _nombre;
 };
 
 #endif // ARCHIVORESTAURANTE_H_INCLUDED
-
