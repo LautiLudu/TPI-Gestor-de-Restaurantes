@@ -1,9 +1,8 @@
 #include <iostream>
-#include <cstring>
 #include <cstdio>
+#include <cstring>
 #include "ArchivoRestaurante.h"
-
-
+#include "Utilidades.h"
 using namespace std;
 
 ArchivoRestaurante::ArchivoRestaurante(std::string nombre){
@@ -24,12 +23,11 @@ Restaurante ArchivoRestaurante::leerRegistro(int pos){
     return reg;
 }
 
-///agrega registros al final del archivo
 bool ArchivoRestaurante::grabarRegistro(Restaurante reg){
     FILE *archivo = fopen(_nombre.c_str(), "ab");
     if(archivo == nullptr) return false;
 
-    bool ok = fwrite(&reg, sizeof(Restaurante), 1, archivo); ///fwrite devuelve true o false, para determinar si hubo excito o fracaso
+    bool ok = fwrite(&reg, sizeof(Restaurante), 1, archivo);
     fclose(archivo);
 
     return ok;
@@ -60,7 +58,7 @@ int ArchivoRestaurante::contarRegistros(){
 }
 
 ///devuelve la posicion del registro con ese id o -1 si no esta
-int ArchivoRestaurante::buscarRegistro(int id){
+int ArchivoRestaurante::buscarRegistroId(int id){
     int cantidad = contarRegistros();
 
     for(int i = 0; i < cantidad; i++){
